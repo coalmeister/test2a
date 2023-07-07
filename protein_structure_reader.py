@@ -1,11 +1,8 @@
 ```python
 import Bio.PDB
 
-def read_protein_structure(pdb_filename):
+def read_protein_structure(protein_file):
     parser = Bio.PDB.PDBParser(QUIET=True)
-    structure = parser.get_structure('protein', pdb_filename)
-    return structure
-
-pdb_filename = 'protein.pdb'
-protein_structure = read_protein_structure(pdb_filename)
+    protein_structure = parser.get_structure('protein', protein_file)
+    return protein_structure
 ```

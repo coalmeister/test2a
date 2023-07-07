@@ -1,11 +1,29 @@
-1. Shared Libraries: Both "protein_structure_reader.py" and "ligand_reader.py" will require libraries for reading PDB and SDF files respectively. "parameter_developer.py", "topology_builder.py", and "energy_evaluator.py" will require AMBER, GAFF, and openmm libraries respectively.
+1. Shared Variables:
+   - `protein_structure`: The protein structure data read from the PDB file.
+   - `ligand_structures`: The list of ligand structures read from the SDF file.
+   - `parameters`: The parameters developed for both protein and ligand using AMBER and GAFF forcefields.
+   - `topology`: The topology developed for both protein and ligand using AMBER and GAFF forcefields.
+   - `protein_ligand_complex`: The combined protein-ligand object.
+   - `energy`: The energy of the protein-ligand complex evaluated using openmm forcefield.
+   - `residue_interaction_energies`: The list of interaction energies of each residue from the protein with the ligand.
+   - `output_filename`: The filename supplied as a command-line argument for output.
 
-2. Shared Data: The protein structure and ligand data read by "protein_structure_reader.py" and "ligand_reader.py" will be used by "parameter_developer.py", "topology_builder.py", "object_combiner.py", and "energy_evaluator.py". 
+2. Data Schemas:
+   - `ProteinStructure`: The schema for the protein structure data.
+   - `LigandStructure`: The schema for the ligand structure data.
+   - `Parameters`: The schema for the parameters data.
+   - `Topology`: The schema for the topology data.
+   - `ProteinLigandComplex`: The schema for the combined protein-ligand object.
+   - `Energy`: The schema for the energy data.
+   - `ResidueInteractionEnergy`: The schema for the interaction energy data.
 
-3. Shared Variables: The parameters and topology developed by "parameter_developer.py" and "topology_builder.py" will be used by "object_combiner.py" and "energy_evaluator.py". The combined protein object from "object_combiner.py" will be used by "energy_evaluator.py".
+3. Function Names:
+   - `read_protein_structure`: Function to read protein structure file in PDB format.
+   - `read_ligand_structure`: Function to read ligand structure file in SDF format.
+   - `generate_parameters_topology`: Function to develop parameters and topology for both protein and ligand.
+   - `combine_protein_ligand`: Function to combine protein into a single object with ligand.
+   - `evaluate_energy`: Function to evaluate the energy of the protein-ligand complex.
+   - `calculate_residue_interaction`: Function to compute the energy of interaction of each residue from the protein with the ligand.
+   - `write_output`: Function to write the output data to a file.
 
-4. Shared Functions: Functions for reading files, developing parameters and topology, combining objects, and evaluating energy will be used across multiple files.
-
-5. Shared Data Schemas: The data schemas for protein structure, ligand, parameters, topology, and combined protein object will be shared across multiple files.
-
-6. Shared Message Names: Messages related to the status of file reading, parameter development, topology building, object combining, and energy evaluation will be shared across multiple files.
+Note: As the prompt does not mention any JavaScript or DOM elements, they are not included in the shared dependencies.
