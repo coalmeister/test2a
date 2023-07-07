@@ -1,0 +1,18 @@
+name: protein_ligand_interaction_env
+channels:
+  - conda-forge
+  - omnia
+  - rdkit
+dependencies:
+  - python=3.7
+  - openmm=7.4.2
+  - rdkit=2020.03.3
+  - py3Dmol=0.9.1
+  - numpy=1.18.5
+  - pandas=1.0.5
+  - ambermini=16.16.0
+  - gaff2xml=1.1.0
+  - pip:
+    - argparse==1.4.0
+    - biopandas==0.2.5
+    - parmed==3.2.0

@@ -1,29 +1,15 @@
-1. Shared Variables:
-   - `protein_structure`: The protein structure data read from the PDB file.
-   - `ligand_structures`: The list of ligand structures read from the SDF file.
-   - `parameters`: The parameters developed for both protein and ligand using AMBER and GAFF forcefields.
-   - `topology`: The topology developed for both protein and ligand using AMBER and GAFF forcefields.
-   - `protein_ligand_complex`: The combined protein-ligand object.
-   - `energy`: The energy of the protein-ligand complex evaluated using openmm forcefield.
-   - `residue_interaction_energies`: The list of interaction energies of each residue from the protein with the ligand.
-   - `output_filename`: The filename supplied as a command-line argument for output.
+The shared dependencies between the "protein_ligand_interaction.py" and "conda_environment.yml" files are:
 
-2. Data Schemas:
-   - `ProteinStructure`: The schema for the protein structure data.
-   - `LigandStructure`: The schema for the ligand structure data.
-   - `Parameters`: The schema for the parameters data.
-   - `Topology`: The schema for the topology data.
-   - `ProteinLigandComplex`: The schema for the combined protein-ligand object.
-   - `Energy`: The schema for the energy data.
-   - `ResidueInteractionEnergy`: The schema for the interaction energy data.
+1. Python Libraries: Both files will require certain Python libraries to function. These libraries will be listed in the "conda_environment.yml" file and will be imported in the "protein_ligand_interaction.py" file. Some of these libraries might include "openmm", "rdkit", "py3Dmol", "numpy", "pandas", etc.
 
-3. Function Names:
-   - `read_protein_structure`: Function to read protein structure file in PDB format.
-   - `read_ligand_structure`: Function to read ligand structure file in SDF format.
-   - `generate_parameters_topology`: Function to develop parameters and topology for both protein and ligand.
-   - `combine_protein_ligand`: Function to combine protein into a single object with ligand.
-   - `evaluate_energy`: Function to evaluate the energy of the protein-ligand complex.
-   - `calculate_residue_interaction`: Function to compute the energy of interaction of each residue from the protein with the ligand.
-   - `write_output`: Function to write the output data to a file.
+2. File Formats: Both files will work with PDB and SDF file formats. The Python script will read and process these files, while the conda environment file will ensure the necessary libraries for handling these formats are installed.
 
-Note: As the prompt does not mention any JavaScript or DOM elements, they are not included in the shared dependencies.
+3. Command-line Arguments: The Python script will take command-line arguments for input and output files. The conda environment file will need to ensure the environment supports command-line arguments.
+
+4. Error Handling: The Python script will include error handling for issues with reading and processing ligands from the SDF file. The conda environment file will need to ensure the environment supports this error handling.
+
+5. Protein and Ligand Processing: Both files will deal with the processing of protein and ligand data. The Python script will perform the actual processing, while the conda environment file will ensure the necessary libraries for this processing are installed.
+
+6. Energy Evaluation: The Python script will perform energy evaluation of the protein-ligand complex. The conda environment file will need to ensure the necessary libraries for this evaluation are installed.
+
+7. AMBER and GAFF Forcefields: Both files will work with AMBER and GAFF forcefields. The Python script will use these for developing parameters and topology, while the conda environment file will ensure the necessary libraries for handling these forcefields are installed.
